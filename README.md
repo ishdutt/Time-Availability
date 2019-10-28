@@ -7,5 +7,5 @@ A small webpage which fetches data from API and renders the free time of the int
 4.Added a free time vertical column.<br />
 
 ## Objectives that wasn't fullfilled
-1.Couldn't add the vertical coulmn for all the free time.I tried it but the page was showing only one of them.<br />
-2.The 2nd page is hard coded.I was trying to make it automatic using a script(through xhr call) but it was showing only the last one user's data.
+1.Couldn't add the vertical column for all the free time.I tried it but the page was showing only one of them.<br />
+2.The 2nd page is hard coded(usses data which is typed manually).I was trying to make it automate it using a script(through xhr call) but it was showing only the last one user's data.
