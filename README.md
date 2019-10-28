@@ -1,5 +1,5 @@
 # Time-Availability
-A small webpage which fetches data from API and renders the free time of the interns
+A small webpage which fetches data from API and renders the free time of the interns. The published website can be found here https://ishdutt.github.io/Time-Availability/
 ## Things included:
 1.Fetches the data directly from API using XHR calls.<br />
 2.Made the tabular layout for storing the data.<br />
