@@ -1,0 +1,63 @@
+.user{
+    font-size: 20px;
+    border-bottom: 1px solid rgb(71, 71, 71);
+    padding: 10px;
+    margin-left: 35px;
+    padding-left: 10px;
+    padding-right: 15px;
+    border-left:1px solid rgb(71, 71, 71);
+}
+.date{
+    float: right;
+}
+.startdate{
+    margin-right:20px ;
+}
+.enddate{
+    margin-left: 10px;
+}
+body{
+    padding: 20px;
+}
+#numbering{
+    padding-left:1px ;
+}
+.numbering{
+    float: left;
+    padding: 10px;
+    font-size: 20px;
+}
+h1{
+   
+    margin-bottom: 0;
+    padding: 10px;
+}
+input{
+    width: 15px;
+    height: 15px;
+    margin-right: 70px;
+}
+#bt{
+    margin-left:35em ;
+    margin-top: 20px;
+}
+a{
+    color: aliceblue;
+}
+a:hover{
+    color: aliceblue;
+    text-decoration: none;
+}
+.header{
+    border-bottom: 2px solid rgb(89, 110, 110);
+    font-size: 40px;
+}
+.rightheader{
+    font-size: 20px;
+    float: right;
+    padding-top: 20px;
+    color: rgb(93, 93, 145);
+}
+.rightH{
+    margin-right: 10px;
+}

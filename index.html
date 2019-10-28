@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Total Cloud</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/CSS/index.css">
+    <!-- <script type="text/javascript" src="assets/JS/index.js"></script> -->
+  </head>
+  <body>
+	<!-- <div id="chart_div"></div> -->
+	<div class="header">
+		<span>Intern Assignment</span>
+		<div class="rightheader">
+			<span class="rightH" >Start date</span>
+			<span class="endH" >Due date</span>
+		</div>
+	</div>
+	
+	
+	<div id="numbering">
+			<div id="users"></div>
+	</div>
+    <button class="btn btn-success" id="bt" ><a href="./available.html">Check Avalibility</a></button>
+  </body>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+$.ajax({
+	url: " https://totalcloud-static.s3.amazonaws.com/intern.json",
+	//Fetches data from API and makes appropriate divs to display the data(using AJAX call)
+    success: function(users) {
+        for (var i = 0; i < users.length; i++) {
+			var numb = document.createElement("div");
+			var user = document.createElement("div");
+
+			var checkbox = document.createElement("input");
+			checkbox.type=  "checkbox";
+
+			numb.className = 'numbering'
+			numb.innerHTML=i;
+            user.className = 'user';
+            // user.className = 'user';
+            span = document.createElement('span');
+            //adding value in html tag
+			span.innerHTML = users[i].name;
+			
+			//capturing date
+			span1 = document.createElement('span');
+			span1.className='startdate';
+			
+			span2 = document.createElement('span');
+			span2.className='enddate';
+
+			//span1.innerHTML = new Date(users[i].start).getMonth();
+			const monthNames = ["January", "February", "March", "April", "May", "June",
+  				"July", "August", "September", "October", "November", "December"
+			];
+
+			let enddate= users[i].end;
+			//enddate=new Date(enddate.slice(6,11),enddate.slice(3,5),enddate.slice(0,2));
+			let startdate=users[i].start;
+			//startdate=new Date(startdate.slice(6,11),startdate.slice(3,5),startdate.slice(0,2));
+			span1.innerHTML = startdate.slice(0,2)+'/'+monthNames[startdate.slice(3,5)-1].slice(0,3);
+			span2.innerHTML = enddate.slice(0,2)+'/'+monthNames[enddate.slice(3,5)-1].slice(0,3);
+			var rightside=document.createElement("div");
+			rightside.className='date';
+			rightside.appendChild(span1);
+			rightside.appendChild(span2);
+		
+			user.appendChild(checkbox);
+			user.appendChild(span);
+			
+			user.appendChild(rightside);
+			// user.appendChild(span2);
+			//user.appendChild(albums);
+			document.getElementById('users').appendChild(numb);
+			//$('<input type="checkbox" name="dynradio" />').appendTo('#user');
+			document.getElementById('users').appendChild(user);
+			
+        }
+    }
+});
+</script>
+</html>

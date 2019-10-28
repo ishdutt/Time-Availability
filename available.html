@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="./assets/JS/index.js"></script>
+      <!--This script intended to fetch the data directly from API and display it on the screen but due to some unknown reasons it was displaying just the last users's data-->
+
+
+    <!-- <script type="text/javascript">
+    $.ajax({
+      url:" https://totalcloud-static.s3.amazonaws.com/intern.json",
+      success:function(users){
+        for (var i = 0; i <users.length; i++) {
+
+          let id=users[i].id;
+          let startdate=users[i].start;
+          // console.log(new Date(startdate.slice(6,11),startdate.slice(3,5),startdate.slice(0,2)));
+          let enddate= users[i].end;
+          let name=users[i].name;
+          google.charts.load('current', {'packages':['timeline','corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        
+      //function to build a chart based on data(from Google charts x)
+      function drawChart() {
+        console.log("Mosih");
+        var container = document.getElementById('timeline');
+        var chart = new google.visualization.Timeline(container);
+        var dataTable = new google.visualization.DataTable();
+        
+        dataTable.addColumn({ type: 'string', id: 'ID' })
+        dataTable.addColumn({ type: 'string', id: 'Name' });
+        dataTable.addColumn({ type: 'date', id: 'Start' });
+        dataTable.addColumn({ type: 'date', id: 'End' });
+        dataTable.addRows([
+          [ id.toString() ,name.toString(), new Date(startdate.slice(6,11),startdate.slice(3,5),startdate.slice(0,2)), new Date(enddate.slice(6,11),enddate.slice(3,5),enddate.slice(0,2)) ],]);
+          chart.draw(dataTable);
+          }  
+        }
+      }
+    })
+      
+         
+    </script> -->
+  </head>
+  <body>
+      <h1>Intern's Availability Graph</h1>
+    <div id="timeline" style="height: 700px;width: 1325px;;"></div>
+  </body>
+</html>
